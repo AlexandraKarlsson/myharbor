@@ -1,0 +1,17 @@
+
+reponsiva stilmallar - anpassar webbsidan till bredden på enheten, 
+skalar upp 100% och går att zooma till 200%:
+<meta name="viewport" content="width = device-width, initial-scale = 1, maximum-scale = 2"/>
+
+viewport förbereder webbläsaren att skala om siten efter enhetens storlek
+height = device-height kan användas för att anpassa ett element att hamna vertikalt/horisontellt  
+
+mobila enheter:
+@media(max-width: 480px){
+//stilregler
+}
+
+medelstorleken för surfplattor:
+@media(min-width: 481px) and (max-width: 1000px){
+//stilregler
+}
