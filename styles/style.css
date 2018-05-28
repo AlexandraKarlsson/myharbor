@@ -71,8 +71,12 @@ time, mark, audio, video {
     margin: 3px;
 }
 
-body {
+
+* {
     box-sizing: border-box;
+}
+
+body {
     max-width: 1000px;
     margin: auto;
     font-family: 'Fjalla One';
@@ -153,7 +157,7 @@ nav a {
 
 aside img {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     height: auto;
 }
 
@@ -261,29 +265,79 @@ td, th {
 
 @media(min-width: 550px){
     
-    body {
-        text-align: left; 
-    }
     footer {
-        text-align: left; 
+        text-align: center; 
     }
     main {
         width: 80%;
+        height: auto;
+        text-align: left;
     }
-    /*
-    aside img{
-        width: 30%;
+    
+    /*-------- INDEX HAMNJOBB --------*/
+    
+    .hamn-jobb img {
+        float: left;
+        width: 10%;
+        min-width: 50px;
         height: auto;
     }
-    */
     
+
+    
+    /*----- ARTICLE AND ASIDE------*/
+    
+    #info-text {
+        text-align: center;
+    }
+    
+    .main-two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    .article-left {
+        margin-right: 1em;
+        padding: 0.5em;
+        grid-column: 1/ span 3;
+    }
+    
+    .aside-right {
+        text-align: center;
+        padding: 1.5em;
+        grid-column: 4;
+    }
+    
+    aside img {
+        margin: 0.1em auto;
+        width: 100%;
+        min-width: 8em;
+        height: auto;
+    }
+    
+     /*------ ENGLISH PAGE ---------*/
+    
+    .aside-left {
+        text-align: center;
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .article-right {
+        margin-left: 1em;
+        padding: 0.5em;
+        grid-column: 2/ span 3;
+    }
+    
+
+
     /*-------- NAV -------*/
     
     nav {
         display: flex;
     }
     
-    ul {
+    nav ul {
         width: auto;
     }
     
