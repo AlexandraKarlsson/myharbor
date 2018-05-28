@@ -1,4 +1,4 @@
-
+﻿
 GÖR ENDAST det de nämner i specifikationen.
 TOLKA MINIMALT, LESS IS MORE!!
 
@@ -10,15 +10,58 @@ Validera och kolla tillgänglighet efter varje moment och committa och pusha
 Moment
 - tidigt bestämma font-family/ -size,
 - minimera css, skapa återanvändbara css-class (t.ex. h1 likadan på alla sidor)
-- skapa grundläggande html-strukturen för de olika sidtyperna
+
 - börja med layout-styling 
 - Kontrollera beteendet för de olika devicen, mobil/padda/desktop
 - 
 
 
 
-
+DONE:
+- skapa grundläggande html-strukturen för de olika sidtyperna
+- layout för enkolumnssidor klar.
 
 
 Om jag får tid över:
 - lägg till extra style
+- history img och text float around?
+- gömma nav i en menyknapp i mobilläge JS
+
+
+
+style-regler:
+- header, nav, footer 100%
+- main 75%
+- float: left 
+- display: flex behöver endast clear inom sitt element.
+- ta bort display: flex från main för mobil, float: left för aside ta bort
+- för att få aside på vänster sida om article, lägg aside innan article
+- använd js för att lägga aside under article i English sidan
+
+-att switch ordning på child element 
+
+<div id="blockContainer">
+    <div id="blockA">Block A</div>
+    <div id="blockB">Block B</div>
+    <div id="blockC">Block C</div>
+</div>
+
+#blockContainer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+#blockA {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+}
+#blockB {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+}

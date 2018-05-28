@@ -71,25 +71,240 @@ time, mark, audio, video {
     margin: 3px;
 }
 
+body {
+    box-sizing: border-box;
+    max-width: 1000px;
+    margin: auto;
+    font-family: 'Fjalla One';
+    text-align: center;
+    /*letter-spacing: 0.5px;*/
+    font-size: 0.75em;
+    color: #1F1F1F;
+    background-image: url(../images/layout/body-pattern.jpeg);
+}
+
+main {
+    margin: 0 auto;
+}
+/*
+aside img {
+    width: 100%;
+    height: auto;
+}*/
+
+main, nav, footer, h1 {
+    background-color: #FFFFFF;
+}
+
+
+
+
 /*--------- HEADER AND PARAGRAPH STYLE ---------*/
 
-
+header {
+    background-image: url('../images/layout/header.png');
+    background-size:     100% 100%;                     
+    background-repeat:   no-repeat;
+    background-position: center center;
+    height: 12em;
+}
 
 h1 {
-    
+    width: 25%;
+    text-align: right;
+    font-size: 160%;
+    font-weight: bolder;
 }
 
 h2 {
-    
+    font-size: 120%;
+    font-weight: bold;
 }
 
 h3 {
-    
+    font-size: 110%;
+    font-weight: bold;
 }
 
 p {
     
 }
 
+/*---------------------NAVIGATION STYLE------------------*/
+
+
+ul {
+    margin: 0 auto;
+    width: 80%;
+}
+
+nav li {
+    margin: 0 auto;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/*-------------------- ASIDE STYLE ------------------*/
+
+aside img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/*--------------------- FORM STYLE ----------------------*/
+
+#articleForm {
+    display: flex;
+}
+
+fieldset {
+    margin: 0 auto;
+}
+
+fieldset label, input, textarea, select {
+    display: block;
+    width: 100%;
+}
+
+/*--------------------- FIGURE STYLE ----------------------*/
+
+#konrad {
+    width: 100%;
+    max-width: 300px;
+    height: auto;   
+}
+
+
+figure img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;   
+}
+
+/*--------------------- TABLE STYLE (Desktop first)---------------------*/
+
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
+@media (max-width:550px){
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+    border: 1px solid #ccc; 
+  }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Förnamn"; }
+	td:nth-of-type(2):before { content: "Efternamn"; }
+	td:nth-of-type(3):before { content: "Adress"; }
+	td:nth-of-type(4):before { content: "Postnr"; }
+	td:nth-of-type(5):before { content: "Postadress"; }
+}
 
 /*---------------- MEDIA QUERIES -----------------*/
+
+
+@media(min-width: 550px){
+    
+    body {
+        text-align: left; 
+    }
+    footer {
+        text-align: left; 
+    }
+    main {
+        width: 80%;
+    }
+    /*
+    aside img{
+        width: 30%;
+        height: auto;
+    }
+    */
+    
+    /*-------- NAV -------*/
+    
+    nav {
+        display: flex;
+    }
+    
+    ul {
+        width: auto;
+    }
+    
+    nav li {
+        float: left;
+    }
+    
+    
+    main {
+        clear: both;
+    }
+    
+    /*------- FORM --------*/
+    
+    fieldset label, input, textarea, select {
+        display: inline-block;
+        width: auto;
+    }
+    
+    .formParagraph{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

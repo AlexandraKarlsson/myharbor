@@ -32,48 +32,48 @@
         </section>
         
         <main>
-            <article>
-                <h2>Är det något du undrar över? Frågor eller förslag tas hjärtligt emot!</h2>
-                <form method="post" action="sendMessage()">
-                    <p>
-                        <label>Rubrik:</label>
-                        <input name="header" type="text"/>
-                    </p>
-                    <p>
-                        <label>Din fråga:</label>
-                        <textarea rows="4" cols="50"></textarea>
-                    </p>
-                    <p>
-                        <label>Vad gäller ärendet:</label>
-                        <select>
-                            <option value="boat">Båtplats</option>
-                            <option value="member">Medlem</option>
-                            <option value="other">Övrigt</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label>Hur vill du bli kontaktad:</label>
-                        <select>
-                            <option value="phone">Telefon</option>
-                            <option value="mail">Mail</option>
-                            <option value="no">Inte alls</option>
-                        </select> 
-                    </p>
-                    <p>
-                        <label>Telefon:</label>
-                        <input name="phonenumber" type="tel"/>
-                    </p>
-                    <p>
-                        <label>Mail:</label>
-                        <input name="email" type="email"/> <!--TODO: use placeholder? -->
-                    </p>
-                    <p>
-                        <input type="submit" value="Skicka"/>
-                    </p>
-                </form>
-
-            </article>          
-
+            <article id="articleForm">
+                <fieldset>
+                    <legend>Är det något du undrar över? Frågor eller förslag tas hjärtligt emot!</legend>
+                    <form method="post" action="sendMessage()">
+                        <p class="formParagraph">
+                            <label>Rubrik:</label>
+                            <input name="header" type="text"/>
+                        </p>
+                        <p class="formParagraph">
+                            <label>Din fråga:</label>
+                            <textarea rows="4" cols="50"></textarea> <!-- col needed? -->
+                        </p>
+                        <p class="formParagraph">
+                            <label>Vad gäller ärendet:</label>
+                            <select>
+                                <option value="boat">Båtplats</option>
+                                <option value="member">Medlem</option>
+                                <option value="other">Övrigt</option>
+                            </select>
+                        </p>
+                        <p class="formParagraph">
+                            <label>Hur vill du bli kontaktad:</label>
+                            <select>
+                                <option value="phone">Telefon</option>
+                                <option value="mail">Mail</option>
+                                <option value="no">Inte alls</option>
+                            </select> 
+                        </p>
+                        <p class="formParagraph">
+                            <label>Telefon:</label>
+                            <input name="phonenumber" type="tel"/>
+                        </p>
+                        <p class="formParagraph">
+                            <label>Mail:</label>
+                            <input name="email" type="email"/> <!--TODO: use placeholder? -->
+                        </p>
+                        <p class="formParagraph">
+                            <input type="submit" value="Skicka"/>
+                        </p>
+                    </form>
+                </fieldset>          
+            </article>
         </main>
         
         <footer>
