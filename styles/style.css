@@ -184,6 +184,13 @@ nav li:hover {
     background-color: #BBDEFB;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+    max-width: 1000px;
+}
+
 /*-------------------- ASIDE STYLE ------------------*/
 
 
@@ -268,10 +275,12 @@ table {
 tr:nth-of-type(odd) { 
   background: #eee; 
 }
+
 th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
+    letter-spacing: 1px;
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
 }
 td, th { 
   padding: 6px; 
