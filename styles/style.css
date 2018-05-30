@@ -54,7 +54,7 @@ table {
 /*  GLOBAL STYLE  */
 
 
-fieldset, form, label, legend,
+
 table, caption, tbody, tfoot, thead, tr, th, td {
     border: 1px solid black;
     margin: 3px;
@@ -224,9 +224,27 @@ fieldset {
     margin: 0 auto;
 }
 
+legend {
+    font-size: 120%;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+form {
+    padding-top: 0.5em;
+}
+
 fieldset label, input, textarea, select {
     display: block;
     width: 100%;
+}
+
+.button {
+    font: inherit;
+    padding:3px 0;
+    background-color:  #FF9933;
+    border-radius: 10px;
+    font-size: bolder;
 }
 
 /*--------------------- FIGURE STYLE ----------------------*/
@@ -402,6 +420,13 @@ td, th {
     fieldset label, input, textarea, select {
         display: inline-block;
         width: auto;
+    }
+    
+    fieldset {
+        padding: 1em;
+        border: 2px solid #BBDEFB;
+        border-radius: 5px;
+        width: 80%;
     }
     
     .formParagraph{
