@@ -53,7 +53,7 @@ table {
 
 /*  GLOBAL STYLE  */
 
-dl, dt, dd, ol,
+
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
     border: 1px solid black;
@@ -157,6 +157,14 @@ figure img {
     border: 1px solid #CDC9C5;
 }
 
+/*-------- HISTORY PAGE ---------*/
+
+dd {
+    font-style: italic;
+    font-size:85%;
+    margin-bottom: 0.3em;
+}
+
 /*---------------------NAVIGATION STYLE------------------*/
 
 
@@ -198,7 +206,7 @@ aside img {
 
 /*--------------------- ARTICLE AND SECTION STYLE ----------------------*/
 .borderTop {
-    border-top: 1px solid #BBDEFB;
+    border-top: 2px solid #BBDEFB;
 }
 
 #info-text {        
