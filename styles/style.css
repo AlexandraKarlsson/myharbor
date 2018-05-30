@@ -54,13 +54,6 @@ table {
 /*  GLOBAL STYLE  */
 
 
-
-table, caption, tbody, tfoot, thead, tr, th, td {
-    border: 1px solid black;
-    margin: 3px;
-}
-
-
 * {
     box-sizing: border-box;
 }
@@ -262,6 +255,8 @@ figure img {
     height: auto;   
 }
 
+
+
 /*--------------------- TABLE STYLE (Desktop first)---------------------*/
 
 
@@ -437,4 +432,6 @@ td, th {
     footer {
         justify-content: center;
     }
+    
+    
 }
