@@ -55,8 +55,7 @@ table {
 
 dl, dt, dd, ol,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, 
-figure, figcaption {
+table, caption, tbody, tfoot, thead, tr, th, td {
     border: 1px solid black;
     margin: 3px;
 }
@@ -89,7 +88,7 @@ main {
 }
 
 .main-one-column article {
-    padding: 7px 5px;
+    padding: 1.5em 0.5em;
 }
 
 article, aside {
@@ -122,7 +121,7 @@ footer {
 
 header {
     background-image: url('../images/layout/header.png');
-    background-size:     100% 100%;                     
+    background-size:     100% 100%;  
     background-repeat:   no-repeat;
     background-position: center top;
     height: 12em;
@@ -154,6 +153,9 @@ h3 {
     margin-top: 0.4em;
 }
 
+figure img {
+    border: 1px solid #CDC9C5;
+}
 
 /*---------------------NAVIGATION STYLE------------------*/
 
