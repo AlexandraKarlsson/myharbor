@@ -53,27 +53,21 @@ table {
 
 /*  GLOBAL STYLE  */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, ol,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+table, caption, tbody, tfoot, thead, tr, th, td, 
+figure, figcaption {
     border: 1px solid black;
-    padding: 3px;
     margin: 3px;
 }
 
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    background-color: white;
 }
 
 body {
@@ -88,19 +82,40 @@ body {
 }
 
 main {
+    padding-top: 1em;
+    padding-bottom: 2em;
     margin: 0 auto;
+    line-height: 1.3em;
 }
-/*
-aside img {
-    width: 100%;
-    height: auto;
-}*/
 
-main, nav, footer, h1 {
+.main-one-column article {
+    padding: 7px 5px;
+}
+
+article, aside {
     background-color: #FFFFFF;
+    margin-top: 3px;
+    padding: 1.5em 0.5em;
 }
 
+section, aside {
+    padding: 7px 5px;
+}
 
+nav, footer, h1{
+    border: 1px solid #BBDEFB;
+    background-color: #E3F2FD;
+}
+
+footer {
+    height: 5em;
+    display: flex;
+    align-items: center;
+}
+
+.borderOrange {
+    border-top: 2px solid #FF9933;
+}
 
 
 /*--------- HEADER AND PARAGRAPH STYLE ---------*/
@@ -109,12 +124,16 @@ header {
     background-image: url('../images/layout/header.png');
     background-size:     100% 100%;                     
     background-repeat:   no-repeat;
-    background-position: center center;
+    background-position: center top;
     height: 12em;
 }
 
 h1 {
-    width: 25%;
+    position: absolute;
+    top: 1.5em;
+    padding: 0.3em 0.3em;
+    width: 30%;
+    max-width: 350px;
     text-align: right;
     font-size: 160%;
     font-weight: bolder;
@@ -123,6 +142,7 @@ h1 {
 h2 {
     font-size: 120%;
     font-weight: bold;
+    padding-bottom: 0.5em;
 }
 
 h3 {
@@ -130,9 +150,10 @@ h3 {
     font-weight: bold;
 }
 
-p {
-    
+.marginTop {
+    margin-top: 0.4em;
 }
+
 
 /*---------------------NAVIGATION STYLE------------------*/
 
@@ -143,17 +164,25 @@ ul {
 }
 
 nav li {
+    border: 1px solid #BBDEFB;
     margin: 0 auto;
+    padding: 3px 0;
 }
 
 nav a {
+    color: inherit;
+    font-size: 105%;
     display: block;
     text-align: center;
     text-decoration: none;
 }
 
+nav li:hover {
+    background-color: #BBDEFB;
+}
 
 /*-------------------- ASIDE STYLE ------------------*/
+
 
 aside img {
     width: 100%;
@@ -161,6 +190,19 @@ aside img {
     height: auto;
 }
 
+#asideText {
+    margin: 1em;
+}
+
+/*--------------------- ARTICLE AND SECTION STYLE ----------------------*/
+.borderTop {
+    border-top: 1px solid #BBDEFB;
+}
+
+#info-text {        
+    padding: 0 0.5em 1em 0.5em;
+    text-align: center;
+}
 
 /*--------------------- FORM STYLE ----------------------*/
 
@@ -265,9 +307,6 @@ td, th {
 
 @media(min-width: 550px){
     
-    footer {
-        text-align: center; 
-    }
     main {
         width: 80%;
         height: auto;
@@ -277,6 +316,8 @@ td, th {
     /*-------- INDEX HAMNJOBB --------*/
     
     .hamn-jobb img {
+        margin-right: 0.3em;
+        margin-bottom: -0.2em;
         float: left;
         width: 10%;
         min-width: 50px;
@@ -287,10 +328,6 @@ td, th {
     
     /*----- ARTICLE AND ASIDE------*/
     
-    #info-text {
-        text-align: center;
-    }
-    
     .main-two-columns {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -298,7 +335,6 @@ td, th {
     
     .article-left {
         margin-right: 1em;
-        padding: 0.5em;
         grid-column: 1/ span 3;
     }
     
@@ -318,6 +354,7 @@ td, th {
      /*------ ENGLISH PAGE ---------*/
     
     .aside-left {
+        padding: 1.5em;
         text-align: center;
         grid-column: 1;
         grid-row: 1;
@@ -325,7 +362,6 @@ td, th {
     
     .article-right {
         margin-left: 1em;
-        padding: 0.5em;
         grid-column: 2/ span 3;
     }
     
@@ -343,6 +379,7 @@ td, th {
     
     nav li {
         float: left;
+        padding: 0.5em 1em;
     }
     
     
@@ -358,7 +395,11 @@ td, th {
     }
     
     .formParagraph{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    footer {
+        justify-content: center;
+    }
 }

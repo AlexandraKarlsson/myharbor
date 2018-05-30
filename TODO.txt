@@ -38,30 +38,10 @@ style-regler:
 - för att få aside på vänster sida om article, lägg aside innan article
 - använd js för att lägga aside under article i English sidan
 
--att switch ordning på child element 
-
-<div id="blockContainer">
-    <div id="blockA">Block A</div>
-    <div id="blockB">Block B</div>
-    <div id="blockC">Block C</div>
-</div>
-
-#blockContainer {
-    display: -webkit-box;
-    display: -moz-box;
-    display: box;
-
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    box-orient: vertical;
-}
-#blockA {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    box-ordinal-group: 2;
-}
-#blockB {
-    -webkit-box-ordinal-group: 3;
-    -moz-box-ordinal-group: 3;
-    box-ordinal-group: 3;
-}
+RETROSPEKTIV:
+- tänk igenom layout och style 
+- skapa färdiga classer med margin/padding osv..
+- börja mobilefirst html utan css, allt ligger i rätt ordning
+- sedan lägga till css för mobile style
+- sedan mediaqueries så att desktop ser bra ut
+- skapa klasser för en specifik style för att kunna återanvända det på flera ställen, ingen begränsning till enstaka element
