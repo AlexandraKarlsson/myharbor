@@ -191,6 +191,14 @@ nav li:hover {
     max-width: 1000px;
 }
 
+.currentLi {
+    background-color: #BBDEFB;
+}
+
+.activePage {
+    background-color: #BBDEFB;
+}
+
 /*-------------------- ASIDE STYLE ------------------*/
 
 
@@ -359,6 +367,9 @@ td, th {
 
     
     /*----- ARTICLE AND ASIDE------*/
+    #main-header {
+        text-align: center;
+    }
     
     .main-two-columns {
         display: grid;
