@@ -1,0 +1,103 @@
+﻿
+VALIDERING:
+
+----------------------------------
+VID ONLINE-VALIDERING AV HTML-KOD
+
+Jag valde att använda mig av online-verktyget achecker för att validera min webbsida. 
+När jag validerar tillgängligheten för samtliga html-sidor, har jag uppnått WCAG 2.0 (Level AA och AAA) förutom contact.html 
+som gav 8 kända problem. Dessa handlade om att jag inte hade kopplat ihop label och input-fälten så att om man utesluter den 
+visuella aspekten kan det bli svårt för användaren att veta vilken label som är till vilken input och därmed inte veta vad 
+man skall fylla i var. Detta var dock lätt att rätta till genom att ge input-fälten (även select) ett "id" och till labelarna
+lägga till attributet"for" och ge det id-värde till vilken input den hör till.
+När jag sedan validerade om contact.html så fanns det inte längre några kända problem.
+Ingen av sidorna har heller någon risk för troliga problem, dock finns det potentiella problem som man kan titta över och värdera
+om det finns en risk att de uppkommer.
+
+Index.html har 63 potentiella problem. T.ex. handlar de första om alt-texter. Huruvida texterna är tillräckligt beskrivande, 
+om innehållet stämmer överrens med vad bilden illustrerar eller om texten skall uteslutas (i de fall då bilden endast 
+har ett dekorativt syfte).
+Om jag utgår från min egen html-kod finns det tillräckligt beskrivande alt-texter och jag använder mig inte av några dekorativa bilder.
+
+----------------------------------------------------
+MANUELLA TESTER:
+
+Jag har använt mig av line-height för all text på mina sidor för att det skall bli lättare för användaren att ta till sig informationen.
+Kunden ville ha en font som heter 'FjallaOne'. I mitt tycke så hade jag inte valt denna font i och med att texten är ihoptryckt och avlång,
+vilket gör att det blir svårare att tyda bokstäverna. Jag prövade med letter-spacing men det fungerade inte bra det heller.
+Om man ändrar storleken på texten med Ctrl och + så behålls fortfarande layouten. Denna effekt beror på att jag använt mig av responsiva 
+värden som em och procent.
+
+Utan javascript skulle min websida fortfarande kunna upprättahålla sin funktionalitet. Vilket beror på att det enda min js fil gör är
+att fästa navigationen i webbfönstret när man scrollar ner och markerar vilken sida i navigationen som används. Så även om dessa visuella effekter
+går förlorade om javascript är förbjudet så påverkar det inte funktionerna på sidan.
+
+När jag testar att ändra namnet på bild-mappen så kan jag se hur sidan skulle se ut om endast bildernas alt-texter syns. Utifrån mitt tycke så förändras 
+inte utseendet för sajten något angemämt om man bortser från hur bilder i allmänhet förbättrar utseendet. Jag märker dock att även "body-pattern"-bilden 
+som kunden vill ha som bakground på sidan också försvinner. Det i sin tur leder till att innehållsdelens bakgrund och den allmänna bakgrunden förlorar
+sin kontrastskillnad. Jag valde därför att byta ut bakgrundsbilden och istälet använda bakgrundsfärgen #CDC9C5.
+
+När jag testar att ändra namnet på mappen som innehåller stylesheet och ser hur sidan ser ut utan någon css så förloras inte innehållet sin logiska struktur.
+Det är fortfarande tydligt och det går att skilja de olika elementen ifrån varandra utan någon extra ansträngning.
+
+Under tiden man tabbar så får man inte samma effekt som vid hovring över navigationen. Jag anser att om det blir samma effekt vid tabbning som vid hovrig kommer det
+bli förvirrande eftersom jag har funktionaliteten att linken som är selecterad har en mörkare bakgrund. Det är inte förrän man tabbat och tryckt enter som samma
+effekt uppnås.
+
+FRÅGA 1.
+Fråga 1 svar: Det är väldigt svårt att utse vilken av de fyra riktlinjerna som är viktigast att följa. Det är t.ex viktigt att användaren vet hur hen skall 
+agera och orientera sig på webbsidan, å andra sidan är det svårt att använda om inte hen kan uppfatta innehållet på sidan. Samtidigt är det viktigt 
+att sidan fungerar och beteer sig förutsägbart för att inte skapa irritation, förvirring och oro.
+Om jag endast får välja en utav riktlinjerna skulle jag nog välja 1-Möjlig att uppfatta, av den enkla anledningen att webbsidan blir värdelös om inte användaren  
+kan uppfatta den. Har webbsidan en logisk struktur med tydliga/beskrivande rubriker/texter blir sidan betydligt mer tilltalande och förstålig 
+för användaren. Genom en tydlig struktur blir det även lättare för användaren att förstå eller lista ut hur hen skall hantera och orientera sig på sidan. 
+T.ex. om navigationen har beskrivande rubriker kommer det bli lättare för användaren att förutsäga vad sidan kommer handla om och därigenom snabare hitta det hen söker efter.
+Visuella element som inte kan uppfattas av synskadade (som bl.a. bilder och filmer) är det betydande med beskrivande texter för att även dem skall få en 
+uppfattning vad som illustreras på bilden eller vad som utspelas i filmen. Dessutom kan alt-texter vara betydande om någon fil saknas eller om något gått 
+fel när sidan renderas och bilden/filmen laddas.
+Färgkonstraster är också en viktig aspekt framförallt för äldre med dålig syn/synfel eller färgblinda som kan få svårt att tyda om kontrasterna inte är tillräckligt 
+kraftfulla för att urskilja förgrund mot bakgrund. 
+
+FRÅGA 2.
+Beroende på websidans syfte och vilken målgrupp man försöker nå så kan det finnas sammanhang där riktlinjerna skulle kunna förbises. En sida som är
+inriktad på människor utan funktionsnedsättningar kan det bli mindre nödvändigt att ta hänsyn till att anpassa sidan för olika funktionsnedsättningar. 
+Tillfällen då en sida är så pass komplex att, om även tillgänglighetsprinciperna tillämpas, blir sidan så pass långsam att den inte längre är 
+användarvänlig eller blir svårhanterlig. Virtuella spel med visuella effekter skulle t.ex. kunna förbise tillgängligheten för bl.a. synskador/synfel då
+spelet förlorar sin funktionalitet utan dessa effekter. Eller att ett spel med ett interaktivt användargränssnitt skall kunna fungera om javascript inte
+är tillåtet.
+
+Dock är det bäst att tillämpa och sträva efter, i så stor mån som möjligt, att uppnå riktlinjerna för tillgänglighet. Inte bara för att inte 
+diskriminera och utesluta "grupper" inom samhället, utan också för att öka din kvot utav potentiella användare.
+
+
+FRÅGA 3.
+Ett bra sätt att testa användbarheten för en webbsida är att låta någon annan än utvecklaren orientera sig och använda sajten.
+Det är lätt att tycka och utgå från egna erfarenheter vad som är självklart att förstå. Dessutom har utvecklaren själv bestämt logiken och vet därför i förväg
+exakt hur sajten fungerar. Det är även individuellt vad som visuellt tilltalar en och det är viktigt att ge användaren får ett bra första intryck.
+
+Jag skulle testa användbarheten för Djupviks sajt genom att låta användaren fylla i en enkät där hen får möjligheten att 
+svara på/ge feedback om vad/hur hen upplever sidan och om huråvida den är lätt att förstå/ visuellt eller informativt tilltalande.
+
+Annars skulle jag titta över sajten och fundera om den ger det intryck som jag vill förmedla. T.ex. kan man fundera på om färgerna som används och
+bilderna stärker det bakomliggande syftet med sajten. Djupvikshamn har jag använt mig av blå och grå toner för att väcka tankar på hav och båtliv, även bilderna
+illustrerar båthamn och fiskestugor. Förutom det visuella skulle jag titta igenom om informationen är korrekt skriven och om innehållet är skrivet
+på ett tilltalande sätt enligt den målgrupp jag riktat in mig på. Det är också viktigt att kolla igenom strukturen så att t.ex. navigeringen har 
+rubriker som stämmer överrens med innehållet på de olika sidorna, det kommer då bli lättare för användaren att hitta det den letar efter. Sedan kan man också
+testa om interaktionen fungerar på ett sätt så att användaren inte blir osäker eller inte förstår hur delar av sajten fungerar. Djupvikshamn har endast 
+ett formulär där man kan skicka ett meddelande. Genom att prova att mata in fel värden eller lämna någon input tom kan man bl.a. testa om det finns någon
+felhantering och om användaren får feedback som talar om vad som gått fel (utan att riskera säkerheten).
+
+
+-----------------------------------------------------------
+VAD JAG SKULLE KUNNA FÖRBÄTTRA:
+- I layouten för mobila enheter skulle man kunna gömma navigeringsmenyn i en klickbar div med hjälp av javascript. För när man skrollar ner på mobila enheter 
+så tar navigationen för stort utrymme utav skärmen när den fäster i fönstrets övre kant.
+- I kontakt formen skulle man kunna lägga till felmeddelanden om något matats in fel/uteslutits eller vid error.
+- I min javascript skulle jag även kunna lägga till felhantering om något värde skulle tilldelas null. 
+- Jag skulle kunna lägga till att formen inte kan submittas förrän man skrivit in sin mail/telefonnummer om man valt att bli kontaktad genom något av de sätten.
+- På sidan över medlemmarna skulle man behöva ändra den statiskt kodade listan över medlemmar. Utan ta ut medlemsinfo ur en databas och sedan bilda tabellstrukturen
+genom att använda js.
+
+
+
+

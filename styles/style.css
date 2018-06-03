@@ -51,11 +51,10 @@ table {
 
 /*  END OF GLOBAL RESET  */
 
-/*  GLOBAL STYLE  */
-
+/*--------------- GLOBAL STYLE -----------------*/
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /*används på alla element för att inte behöva ta hänsyn till */
 }
 
 html {
@@ -67,10 +66,10 @@ body {
     margin: auto;
     font-family: 'Fjalla One';
     text-align: center;
-    /*letter-spacing: 0.5px;*/
     font-size: 0.75em;
     color: #1F1F1F;
-    background-image: url(../images/layout/body-pattern.jpeg);
+    background-color: #CDC9C5;
+    /*background-image: url(../images/layout/body-pattern.jpeg);*/
 }
 
 main {
@@ -95,9 +94,10 @@ section, aside {
 }
 
 nav, footer, h1{
-    border: 1px solid #BBDEFB;
+    border: 2px solid #BBDEFB;
     background-color: #E3F2FD;
 }
+
 
 footer {
     height: 5em;
@@ -105,21 +105,34 @@ footer {
     align-items: center;
 }
 
-.borderOrange {
+em {
+    font-style: italic;
+}
+
+.borderOrange { 
     border-top: 2px solid #FF9933;
 }
 
+.marginTop {
+    margin-top: 0.4em;
+}
+
+.borderTop {
+    border-top: 2px solid #BBDEFB;
+}
 
 /*--------- HEADER AND PARAGRAPH STYLE ---------*/
 
-header {
+/*sätter bakgrundsbilden på headerdelen, gör den responsiv och tillåter inte bilden att upprepa sig tills den fyller ut hela vidden*/
+header { 
     background-image: url('../images/layout/header.png');
-    background-size:     100% 100%;  
+    background-size:  100% 100%;  
     background-repeat:   no-repeat;
     background-position: center top;
     height: 12em;
 }
 
+/*absolute positionering för att kunna justera placeringen i förhållande till bakgrundsbilden*/
 h1 {
     position: absolute;
     top: 1.5em;
@@ -142,24 +155,7 @@ h3 {
     font-weight: bold;
 }
 
-.marginTop {
-    margin-top: 0.4em;
-}
-
-figure img {
-    border: 1px solid #CDC9C5;
-}
-
-/*-------- HISTORY PAGE ---------*/
-
-dd {
-    font-style: italic;
-    font-size:85%;
-    margin-bottom: 0.3em;
-}
-
 /*---------------------NAVIGATION STYLE------------------*/
-
 
 ul {
     margin: 0 auto;
@@ -184,23 +180,20 @@ nav li:hover {
     background-color: #BBDEFB;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+/*Till för att kunna fixera navigationen längst upp i webbfönstret och ta upp hela vidden*/
+.sticky {  
+    position: fixed;
+    top: 0;
+    width: 100%;
     max-width: 1000px;
 }
 
-.currentLi {
-    background-color: #BBDEFB;
-}
-
-.activePage {
+/*Ger annan färg när en av list items i navigationen är selecterad*/
+.currentLi, .activePage {
     background-color: #BBDEFB;
 }
 
 /*-------------------- ASIDE STYLE ------------------*/
-
 
 aside img {
     width: 100%;
@@ -213,13 +206,16 @@ aside img {
 }
 
 /*--------------------- ARTICLE AND SECTION STYLE ----------------------*/
-.borderTop {
-    border-top: 2px solid #BBDEFB;
-}
 
 #info-text {        
     padding: 0 0.5em 1em 0.5em;
     text-align: center;
+}
+
+/*--------------- FIGURE STYLE ----------------*/
+
+figure img {
+    border: 1px solid #CDC9C5;
 }
 
 /*--------------------- FORM STYLE ----------------------*/
@@ -270,16 +266,25 @@ figure img {
     height: auto;   
 }
 
+/*-------- DEFINITIONLIST STYLE ---------*/
+
+dd {
+    font-style: italic;
+    font-size:85%;
+    margin-bottom: 0.3em;
+}
 
 
 /*--------------------- TABLE STYLE (Desktop first)---------------------*/
 
+/* För tabellens struktur har jag valt att utgå från desktop först. Anledningen till detta är att om jag skall få till en snygg layout för mobila enheter tvingar jag tabellen att inte längre betee sig som en tabell vanligtvis struktureras. Skulle jag utgå från mobila enheter först skulle det krävas mer inställningar för att återställa dessa css-regler*/
 
 table { 
   width: 100%; 
   border-collapse: collapse; 
 }
-/* Zebra striping */
+
+/*Får varannan rad i tabellen att få en grå bakgrund*/
 tr:nth-of-type(odd) { 
   background: #eee; 
 }
@@ -296,13 +301,13 @@ td, th {
   text-align: left; 
 }
 
-@media (max-width:550px){
-	/* Force table to not be like tables anymore */
+@media (max-width:550px) {
+    
 	table, thead, tbody, th, td, tr { 
 		display: block; 
 	}
 	
-	/* Hide table headers (but not display: none;, for accessibility) */
+	/* Genom höga negativa värden så gömmer jag kolumnrubrikerna. Använder inte display:none för att kunna använda dem för varje rad-objekt */
 	thead tr { 
 		position: absolute;
 		top: -9999px;
@@ -314,17 +319,15 @@ td, th {
   }
 	
 	td { 
-		/* Behave  like a "row" */
+		/* Genom relative positionering behandlas td som att de skall ta upp andra hälften av en rad*/
+        position: relative;
 		border: none;
 		border-bottom: 1px solid #eee; 
-		position: relative;
 		padding-left: 50%; 
 	}
 	
 	td:before { 
-		/* Now like a table header */
 		position: absolute;
-		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
 		width: 45%; 
@@ -332,9 +335,7 @@ td, th {
 		white-space: nowrap;
 	}
 	
-	/*
-	Label the data
-	*/
+	/* skapar labels med samma namn som th*/
 	td:nth-of-type(1):before { content: "Förnamn"; }
 	td:nth-of-type(2):before { content: "Efternamn"; }
 	td:nth-of-type(3):before { content: "Adress"; }
@@ -342,31 +343,36 @@ td, th {
 	td:nth-of-type(5):before { content: "Postadress"; }
 }
 
-/*---------------- MEDIA QUERIES -----------------*/
+/*---------------- MEDIA QUERIE (PADDA TILL DESKTOP) -----------------*/
 
 
-@media(min-width: 550px){
+@media(min-width: 550px) {
     
     main {
         width: 80%;
         height: auto;
         text-align: left;
+        clear: both;
+    }
+    
+    .float {
+        float: left;
+        margin-right: 0.5em;
     }
     
     /*-------- INDEX HAMNJOBB --------*/
     
     .hamn-jobb img {
-        margin-right: 0.3em;
-        margin-bottom: -0.2em;
         float: left;
         width: 10%;
         min-width: 50px;
         height: auto;
-    }
-    
-
+        margin-right: 0.3em;
+        margin-bottom: -0.2em;
+    }    
     
     /*----- ARTICLE AND ASIDE------*/
+    
     #main-header {
         text-align: center;
     }
@@ -377,38 +383,38 @@ td, th {
     }
     
     .article-left {
-        margin-right: 1em;
         grid-column: 1/ span 3;
+        margin-right: 1em;
     }
     
     .aside-right {
+        grid-column: 4;
         text-align: center;
         padding: 1.5em;
-        grid-column: 4;
     }
     
     aside img {
-        margin: 0.1em auto;
         width: 100%;
         min-width: 8em;
         height: auto;
+        margin: 0.1em auto;
     }
     
-     /*------ ENGLISH PAGE ---------*/
+    /*------ ENGLISH PAGE (article/aside)---------*/
+    /* Ändrar grid-kolumnerna för att få aside på vänster sida om artikeln*/
     
     .aside-left {
-        padding: 1.5em;
-        text-align: center;
         grid-column: 1;
         grid-row: 1;
+        padding: 1.5em;
+        text-align: center;
     }
     
     .article-right {
+        grid-column: 2/ span 3;       
         margin-left: 1em;
-        grid-column: 2/ span 3;
     }
     
-
 
     /*-------- NAV -------*/
     
@@ -423,12 +429,7 @@ td, th {
     nav li {
         float: left;
         padding: 0.5em 1em;
-    }
-    
-    
-    main {
-        clear: both;
-    }
+    }   
     
     /*------- FORM --------*/
     
@@ -438,16 +439,18 @@ td, th {
     }
     
     fieldset {
+        width: 80%;
         padding: 1em;
         border: 2px solid #BBDEFB;
-        border-radius: 5px;
-        width: 80%;
+        border-radius: 5px;   
     }
     
     .formParagraph{
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    
+    /*----------- FOOTER -----------*/
     
     footer {
         justify-content: center;
